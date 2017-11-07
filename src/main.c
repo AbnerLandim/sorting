@@ -1,14 +1,16 @@
+/*
+ * (C) 2017 - Prog. II
+ * Abner, Patrick G. & Rafael
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "../include/sorting.h"
 
-void writeInfo();
-void readInfo(t_Person **);
-
 int main(){
   t_Person *pessoas = calloc(100, sizeof(t_Person));
 
-  writeInfo();
+  /* writeInfo(); */
   readInfo(&pessoas);
 
   /* puts(pessoas[99].name); */
@@ -25,7 +27,7 @@ void writeInfo(){
        *idades = fopen("../etc/idades.txt", "r"),
        *data = fopen("../etc/data.bin", "w+b");
 
-  while((fgets(pessoas[i].name, MAXSIZE, nomes) != NULL && fscanf(idades, "%hu", &pessoas[i].age) != EOF))
+  while((fgets(pessoas[i].name, MAXNAMESIZE, nomes) != NULL && fscanf(idades, "%hu", &pessoas[i].age) != EOF))
     i++;
 
   fwrite(pessoas, sizeof(t_Person), 100, data);

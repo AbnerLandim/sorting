@@ -1,4 +1,4 @@
-void quick(int vetor[10], int inicio, int fim){
+void quick(int vetor[], int inicio, int fim){
   int pivo, aux, i, j, meio;
 
   i = inicio;

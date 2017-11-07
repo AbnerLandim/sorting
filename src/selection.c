@@ -1,17 +1,15 @@
-void selection(Item* v, int n){
-  int i, j, Min;
-
-  Item aux;
+void selection(int *v, int n){
+  int i, j, min, aux;
 
   for(i = 0; i < n - 1; i++)  {
-    Min = i;
+    min = i;
 
     for(j = i + 1 ; j < n; j++)
-      if ( v[j].Chave < v[Min].Chave)
-        Min = j;
+      if (v[j] < v[min])
+        min = j;
 
-    aux = v[Min];
-    v[Min] = v[i];
+    aux = v[min];
+    v[min] = v[i];
     v[i] = aux;
   }
 }
